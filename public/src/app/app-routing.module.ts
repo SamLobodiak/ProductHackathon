@@ -7,7 +7,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 
 const routes: Routes = [
   {
-    path:'asdf',
+    path:'',
     pathMatch:'full',
     component: LoginComponent,
     children:[]
@@ -25,7 +25,7 @@ const routes: Routes = [
     children:[]
   },
   {
-    path:'',
+    path:'modifyadd',
     pathMatch:'full',
     component: CreateEditComponent,
     children:[]

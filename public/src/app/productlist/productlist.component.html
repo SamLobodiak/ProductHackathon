@@ -11,28 +11,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let product of products, let user of users'>
+      <tr *ngFor='let product of products'>
         <td>{{product.name}}</td>
         <td>{{product.location}}</td>
-        <td>{{product.picture}}</td>
+        <td><img width="200"src="{{product.picture}}" alt=""></td>
         <td>{{product.desc}}</td>
         <td>{{product.price | currency }}</td>
-        <td>Inquire: {{ user.email }}</td>
+        <td> Inquire: {{product._user}}</td>
       </tr>
     </tbody>
+  </table>
 
-  </table>
-  <br>
-  <table>
-    <thead>
-      <tr>
-        <th>asdf</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr >
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 </div>
