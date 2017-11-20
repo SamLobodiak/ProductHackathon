@@ -5,7 +5,7 @@ const User = mongoose.model('User');
 module.exports = {
 
   create: (req, res) => {
-    console.log("made it to CREATE");
+    console.log("made it to CREATE USER in express controller");
     console.log(req.body);
     const user = new User(req.body);
 
@@ -24,7 +24,7 @@ module.exports = {
     })
   },
   show: (req, res) => {
-    console.log("inside SHOW USERS")
+    console.log("inside SHOW USERS in express controller")
     User.find({}, (users, error)=>{
         if(users){
             res.json(users)

@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 
-mongoose.connect('mongodb://localhost/trivia_db', {useMongoClient: true});
+mongoose.connect('mongodb://localhost/yacht_db', {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 

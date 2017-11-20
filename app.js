@@ -8,7 +8,7 @@ const session = require('express-session');
 const app = express();
 
 app.use(express.static(path.join(__dirname, './public/dist' )));
-app.use(session({secret: 'GoldenEye'}))
+app.use(session({secret: 'hackathon'}))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
