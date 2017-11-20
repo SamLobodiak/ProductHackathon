@@ -1,3 +1,38 @@
-<p>
-  productlist works!
-</p>
+<div class="productslist">
+  <table border='3'>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Location</th>
+        <th>Picture</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products, let user of users'>
+        <td>{{product.name}}</td>
+        <td>{{product.location}}</td>
+        <td>{{product.picture}}</td>
+        <td>{{product.desc}}</td>
+        <td>{{product.price | currency }}</td>
+        <td>Inquire: {{ user.email }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>asdf</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

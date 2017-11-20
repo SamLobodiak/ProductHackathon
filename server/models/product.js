@@ -7,7 +7,8 @@ const ProductSchema = new mongoose.Schema({
     location: String,
     picture: String,
     desc: String,
-    price: Number
+    price: Number,
+    _user: {type: Schema.Types.ObjectId, ref: 'User'},
 }, {timestamps: true});
 
 mongoose.model('Product', ProductSchema);
