@@ -15,14 +15,13 @@
         <tr *ngFor='let product of products'>
           <td>{{product.name}}</td>
           <td>{{product.location}}</td>
-          <td><img width="200"src="{{product.picture}}" alt=""></td>
+          <td><img width="150"src="{{product.picture}}" alt=""></td>
           <td>{{product.desc}}</td>
           <td>{{product.price | currency }}</td>
           <td> Inquire: {{product._user}}</td>
         </tr>
       </tbody>
     </table>
-
   </div>
 
 </div>

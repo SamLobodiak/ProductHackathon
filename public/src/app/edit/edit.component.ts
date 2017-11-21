@@ -4,11 +4,11 @@ import { User } from './../user';
 import { ProductsService } from './../products.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class EditComponent implements OnInit {
   product: Product = new Product();
   products: Array<Product>;
   users: User[];
@@ -27,12 +27,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._productsServices.getProducts();
-    this._productsServices.getUsers();
   }
 
-
-  delete(id) {
-    this._productsServices.deleteProduct(id);
-  }
+    update(id) {
+      this._productsServices.updateProduct(id);
+    }
 }

@@ -8,35 +8,34 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductsService {
   products: Product[];
   productsObservable = new BehaviorSubject(this.products);
-
-  users:User[];
+  users: User[];
   usersObservable = new BehaviorSubject(this.users);
 
   constructor(private _http: Http) { }
 
-  getUsers(){
+  getUsers() {
     this._http.get('/users/show').subscribe(
-      (users)=>{
+      (users) => {
         // if call = success
         this.users = users.json();
         this.usersObservable.next(this.users);
       },
       (error)=>{
         // if call != success
-        console.log(error)
+        console.log(error);
       }
-    )
+    );
   }
-  addUser(user:User){
+  addUser(user: User) {
     console.log('attempting to add user', user);
     this._http.post('/users/create', user).subscribe(
-      (userCreated)=>{
+      (userCreated) => {
         this.users.push(userCreated.json());
         this.usersObservable.next(this.users);
       }
-    )
+    );
   }
-  
+
   getProducts() {
     this._http.get('/products/show').subscribe(
       (products) => {
@@ -59,9 +58,9 @@ export class ProductsService {
       }
     );
   }
-  updateProduct(product: Product) {
+  updateProduct(id: string) {
     console.log('Product Updated function hit!!!');
-    this._http.post('/products/update/:id', product).subscribe(
+    this._http.put(`/products/edit/${id}`, this.products).subscribe(
       (productUpdated) => {
         this.products.push(productUpdated.json());
         this.productsObservable.next(this.products);
@@ -70,9 +69,9 @@ export class ProductsService {
       }
     );
   }
-  deleteProduct(product: Product) {
+  deleteProduct(id: string) {
     console.log('product deleted function hit!!!');
-    this._http.post('/products/delete/:id', product).subscribe(
+    this._http.delete(`products/delete/${id}`).subscribe(
       (productDeleted) => {
         console.log('successfully deleted!');
         this.products = productDeleted.json();

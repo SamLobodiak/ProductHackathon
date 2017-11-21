@@ -1,8 +1,9 @@
 <div class="container">
-  <a [routerLink]="['dashboard']">dashboard</a>
-  <a [routerLink]="['products']">products</a>
-  <a [routerLink]="['']">logout</a>
-  <a [routerLink]="['modifyadd']">Edit or Add</a>
-  <router-outlet></router-outlet>
+  <a [routerLink]="['/']">Login Page</a>
+  <a [routerLink]="['/create-edit']">Add Product</a>
+  <a [routerLink]="['/products']">Show Product</a>
+  <a [routerLink]="['/dashboard']">Dashboard</a>
 
+
+  <router-outlet></router-outlet>
 </div>

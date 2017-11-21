@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from './../product';
 import { User } from './../user';
 import { Http } from '@angular/http';
@@ -10,27 +11,29 @@ import { ProductsService } from './../products.service';
   styleUrls: ['./productlist.component.css']
 })
 export class ProductlistComponent implements OnInit {
-  products:Product[];
+  products: Product[];
+  users: User[];
 
-  users:User[];
-
-  constructor(private _productsServices: ProductsService) {
+  constructor(private _productsServices: ProductsService, private _router: Router) {
     this._productsServices.productsObservable.subscribe(
-      (products)=>{
+      (products) => {
         this.products = products;
       }
     ),
     this._productsServices.usersObservable.subscribe(
-      (users)=>{
+      (users) => {
         this.users = users;
       }
-    )
-  },
-
+    );
+  }
 
   ngOnInit() {
     this._productsServices.getProducts();
     this._productsServices.getUsers();
+  }
+
+  product() {
+    this._router.navigate(['/products']);
   }
 
 }

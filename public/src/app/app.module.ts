@@ -13,6 +13,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 // services
 import { UsersService } from './users.service';
 import { ProductsService } from './products.service';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductsService } from './products.service';
     LoginComponent,
     DashboardComponent,
     CreateEditComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

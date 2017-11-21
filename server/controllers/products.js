@@ -1,3 +1,4 @@
+//  TESTING FOR GITHUB
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 
@@ -8,17 +9,14 @@ module.exports = {
     console.log("made it to CREATE PRODUCTS in controller");
     console.log(req.body);
     const product = new Product(req.body);
-
+    product._user = req.session.user_id
+    console.log(product._user)
     console.log("made it right before product.save");
-
-
 
     product.save((err) =>{
         if(err) {
             res.send(err);
         } else {
-            // can access id here to put in session
-            // req.session.user_id = product._id;
             res.json(product);
         }
     })
@@ -33,5 +31,19 @@ module.exports = {
         }
     })
   },
+  update: function(req, res) {
+      console.log('update function hit!');
+    Product.update({ _id: req.params.id }, req.body, function(err, result){
+        if (err) { console.log(err); }
+      });
+},
 
+
+  delete: function(req, res) {
+      console.log("delete function hit!");
+      console.log(req.params.id)
+    Product.remove({ _id: req.params.id }, function(err, result){
+        if (err) { console.log(err); }
+    })
+},
 }
