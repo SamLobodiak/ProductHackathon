@@ -1,12 +1,15 @@
-<h1>Create a Listing</h1>
-<div class="addproduct">
-  <form (submit)='onSubmit()' #formData='ngForm'>
+<div class="container">
+  <h1>Create a Listing</h1>
+  <div class="addproduct">
+    <form (submit)='onSubmit()' #formData='ngForm'>
 
-    <p>Name: <input type="text" name="name" required minlength ='2' [(ngModel)]='product.name'></p>
-    <p>Location: <input type="text" name="location" [(ngModel)]='product.location'></p>
-    <p>Picture: <input type="text" name="picture" [(ngModel)]='product.picture'></p>
-    <p>Description: <input type="text" name="desc" [(ngModel)]='product.desc'></p>
-    <p>Price: <input type="text" name="price" [(ngModel)]='product.price'></p>
-    <input type="submit" name="submit" value="Click meh" [disabled]="!formData.valid">
-  </form>
+      <p>Name: <input type="text" name="name" required minlength ='2' [(ngModel)]='product.name'></p>
+      <p>Location: <input type="text" name="location" required minlength ='2' [(ngModel)]='product.location'></p>
+      <p>Picture: <input type="text" name="picture" required minlength ='2' [(ngModel)]='product.picture'></p>
+      <p>Description: <input type="text" name="desc" required minlength ='2' [(ngModel)]='product.desc'></p>
+      <p>Price: <input type="text" name="price" required minlength ='2' [(ngModel)]='product.price'></p>
+      <input id="button" type="submit" name="submit" value="Click meh" [disabled]="!formData.valid">
+      <img width="200" *ngIf='formData.valid' src="https://www.thesun.co.uk/wp-content/uploads/2016/04/1881602.main_image.jpg?strip=all&w=620&h=524&crop=1" alt="">
+    </form>
+  </div>
 </div>

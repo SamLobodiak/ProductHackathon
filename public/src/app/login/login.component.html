@@ -1,7 +1,11 @@
-<form (submit)='onSubmit()' #formData='ngForm'>
-  <p>Name: <input name='name' type='text' [(ngModel)] = 'user.name' required minlength="3"></p>
-  <p>Email: <input name='email' type='text' [(ngModel)] = 'user.email' required minlength="3"></p>
-  <p>Password: <input name='password' type='text' [(ngModel)] = 'user.password' required minlength="3"></p>
-  <p>Password Confirmation: <input name='passwordconfirm' type='text' [(ngModel)] = 'user.passwordconfirm' required minlength="3"></p>
-  <input type="submit" name="" value="Login!"  [disabled]="!formData.valid">
-</form>
+<div class="container">
+  <form (submit)='onSubmit()' #formData='ngForm'>
+    <p>Name: <input name='name' type='text' [(ngModel)] = 'user.name' required minlength="3"></p>
+    <p>Email: <input name='email' type='text' [(ngModel)] = 'user.email' required minlength="3"></p>
+    <p>Password: <input name='password' type='text' [(ngModel)] = 'user.password' required minlength="3"></p>
+    <p>Password Confirmation: <input name='passwordconfirm' type='text' [(ngModel)] = 'user.passwordconfirm' required minlength="3"></p>
+    <input id="button"type="submit" name="" value="Login!"  [disabled]="!formData.valid">
+    <img width="200" *ngIf='formData.valid' src="https://i.pinimg.com/originals/4e/29/33/4e2933723f1958fd8aeb1c2ca017b05c.jpg" alt="">
+  </form>
+
+</div>

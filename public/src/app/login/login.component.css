@@ -1,0 +1,29 @@
+.container{
+  width: 813px;
+  height: 450px;
+  font-family: papyrus, fantasy;
+  font-weight: bolder;
+  background-image: url(https://ak0.picdn.net/shutterstock/videos/29398810/thumb/1.jpg);
+  padding: 5px 20px 20px 20px;
+  margin-top: 10px;
+}
+#button{
+  border-radius: 5px;
+  font-family: papyrus, fantasy;
+  font-size: 22px;
+  height: 50px;
+  width: 100px;
+  color: beige;
+  background-color: beige;
+  box-shadow: 2px 2px black;
+  background-image: url(https://thumb1.shutterstock.com/display_pic_with_logo/110656/110656,1281939935,3/stock-photo-old-compass-and-rope-on-vintage-map-59106952.jpg);
+
+}
+
+.container input{
+  font-family: papyrus, fantasy;
+  font-weight: bold;
+  color: white;
+  box-shadow: 2px 2px black;
+  background-image: url(https://images-na.ssl-images-amazon.com/images/I/61%2BdoS-4ZiL.jpg);
+}

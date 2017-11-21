@@ -1,25 +1,28 @@
-<div class="productslist">
-  <table border='3'>
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Location</th>
-        <th>Picture</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Contact</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let product of products'>
-        <td>{{product.name}}</td>
-        <td>{{product.location}}</td>
-        <td><img width="200"src="{{product.picture}}" alt=""></td>
-        <td>{{product.desc}}</td>
-        <td>{{product.price | currency }}</td>
-        <td> Inquire: {{product._user}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="productslist">
+    <table border='3'>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Location</th>
+          <th>Picture</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let product of products'>
+          <td>{{product.name}}</td>
+          <td>{{product.location}}</td>
+          <td><img width="200"src="{{product.picture}}" alt=""></td>
+          <td>{{product.desc}}</td>
+          <td>{{product.price | currency }}</td>
+          <td> Inquire: {{product._user}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 
 </div>

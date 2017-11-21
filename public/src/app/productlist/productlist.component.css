@@ -1,0 +1,13 @@
+.container{
+  width: 813px;
+  height: 450px;
+  font-family: papyrus, fantasy;
+  font-weight: bolder;
+  background-image: url(https://ak0.picdn.net/shutterstock/videos/29398810/thumb/1.jpg);
+  padding: 5px 20px 20px 20px;
+  margin-top: 10px;
+}
+table{
+  border-radius: 5px;
+  border-color: darkblue;
+}
