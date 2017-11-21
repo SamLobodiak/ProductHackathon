@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>PRESTIGE, WORLDWIDE.</h1>
+  <h1>Prestige Worldwide.</h1>
   <form (submit)='onSubmit()' #formData='ngForm'>
     <p>Name: <input name='name' type='text' [(ngModel)] = 'user.name' required minlength="3"></p>
     <p>Email: <input name='email' type='text' [(ngModel)] = 'user.email' required minlength="3"></p>
@@ -8,8 +8,9 @@
     <input id="button"type="submit" name="" value="Login!"  [disabled]="!formData.valid">
     <img width="200" *ngIf='formData.valid' src="https://i.pinimg.com/originals/4e/29/33/4e2933723f1958fd8aeb1c2ca017b05c.jpg" alt="">
   </form>
-  <iframe width="360" height="170" src="https://www.youtube.com/embed/lrSBgntjD60?start=35" frameborder="4" allowfullscreen></iframe>
+
 </div>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/5yfh2VIXAo0?start=35" frameborder="0" allowfullscreen></iframe> -->
 <!-- <a [routerLink]="['/dashboard']">Show Dashboard</a>
 <a [routerLink]="['/create-edit']">Add Product</a>
 <a [routerLink]="['/products']">Show Product</a>

@@ -27,9 +27,8 @@ export class ProductlistComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this._productsServices.getProducts();
-    this._productsServices.getUsers();
+  ngOnInit(id) {
+    this._productsServices.getProduct(id);
   }
 
   product() {

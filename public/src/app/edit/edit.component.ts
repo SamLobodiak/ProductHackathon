@@ -24,12 +24,15 @@ export class EditComponent implements OnInit {
         this.users = users;
       }
     );
+    this._productsServices.getProduct(id);
   }
 
-  ngOnInit() {
+  ngOnInit(id) {
+    this.product = new Product();
   }
 
-    update(id) {
-      this._productsServices.updateProduct(id);
-    }
+  update(id) {
+    console.log(id);
+  }
+
 }

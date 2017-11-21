@@ -8,11 +8,10 @@ module.exports = (app)=>{
     //routes for products
     app.post('/products/create', products.create);
     app.get('/products/show', products.show);
+    app.get('/products/:id', products.findone);
     app.put('/products/edit/:id', products.update);
     app.delete('/products/delete/:id', products.delete);
-
-    // app.all("*", (req,res,next) => {
-    //
-    // res.sendFile(path.resolve("./public/dist/index.html"))
-    // });
+    app.all("*", (req,res,next) => {
+    res.sendFile(path.resolve("./public/dist/index.html"))
+    });
 }

@@ -20,7 +20,7 @@ export class ProductsService {
         this.users = users.json();
         this.usersObservable.next(this.users);
       },
-      (error)=>{
+      (error) => {
         // if call != success
         console.log(error);
       }
@@ -76,6 +76,20 @@ export class ProductsService {
         console.log('successfully deleted!');
         this.products = productDeleted.json();
       }, (error) => {
+        console.log(error);
+      }
+    );
+  }
+  getProduct(id: string) {
+    console.log('2');
+    this._http.get(`/products/${id}`).subscribe(
+      (products) => {
+        // if call = success
+        this.products = products.json();
+        this.productsObservable.next(this.products);
+      },
+      (error) => {
+        // if call != success
         console.log(error);
       }
     );

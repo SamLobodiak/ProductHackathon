@@ -46,4 +46,15 @@ module.exports = {
         if (err) { console.log(err); }
     })
 },
+  findone:function(req, res) {
+      console.log('finding item!')
+      console.log(req.params.id)
+      Product.find({ _id: req.params.id }, function(products, error){
+          if (products) {
+              res.json(products)
+          } else {
+              res.send(error)
+          }
+      })
+  }
 }

@@ -1,25 +1,25 @@
 <div class="container">
-    <a [routerLink]="['/products']">Add Product</a>
-  <table border='3'>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Picture</th>
-        <th>Edit</th>
-        <th>Product ID</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let product of products'>
-        <td><a [routerLink]="['/products', product.id]">{{product.name}}</a></td>
-        <td>{{product.location}}</td>
-        <td><img width="150"src="{{product.picture}}" alt=""></td>
-        <td>{{product._id}}</td>
-        <td><a [routerLink]="['/edit']">Update Product</a></td>
-        <td><button (click)="delete(product._id)">Delete Item</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="dashboard">
+      <a [routerLink]="['/create-edit']">Add Product</a>
+    <table border='3'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Picture</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let product of products'>
+          <td><button (click)="show(product._id)">{{product.name}}</button></td>
+          <td>{{product.location}}</td>
+          <td><img width="150" src="{{product.picture}}" alt=""></td>
+          <td><button class="button" (click)="update(product._id)">Update Item</button></td>
+          <td><button class="button" (click)="delete(product._id)">Delete Item</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

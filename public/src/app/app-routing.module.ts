@@ -8,7 +8,7 @@ import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
-    path: 'edit',
+    path: 'edit/:id',
     pathMatch: 'full',
     component: EditComponent,
     children: []
@@ -26,7 +26,7 @@ const routes: Routes = [
     children: []
   },
   {
-    path: 'products',
+    path: 'products/:id',
     pathMatch: 'full',
     component: ProductlistComponent,
     children: []

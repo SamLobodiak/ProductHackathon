@@ -1,11 +1,14 @@
-<h1>Edit the Listing!!!</h1>
-<div class="addproduct">
-  <form (submit)='update(product._id)' #formData='ngForm'>
-    <p>Name: <input type="text" name="name" required minlength ='2' [(ngModel)]='product.name'></p>
-    <p>Location: <input type="text" name="location" [(ngModel)]='product.location'></p>
-    <p>Picture: <input type="text" name="picture" [(ngModel)]='product.picture'></p>
-    <p>Description: <input type="text" name="desc" [(ngModel)]='product.desc'></p>
-    <p>Price: <input type="text" name="price" [(ngModel)]='product.price'></p>
-    <input type="submit" name="submit" value="Click!!!" [disabled]="!formData.valid">
-  </form>
-<a [routerLink]="['/dashboard']">Home</a>
+<div class="container">
+  <h1>Edit the Listing!!!</h1>
+  <div class="addproduct">
+    <form (submit)='update()' #formData='ngForm'>
+      <p>Name: <input type="text" name="name" required minlength ='2' [(ngModel)]='product.name'></p>
+      <p>Location: <input type="text" name="location" [(ngModel)]='product.location'></p>
+      <p>Picture: <input type="text" name="picture" [(ngModel)]='product.picture'></p>
+      <p>Description: <input type="text" name="desc" [(ngModel)]='product.desc'></p>
+      <p>Price: <input type="text" name="price" [(ngModel)]='product.price'></p>
+      <input id="button" type="submit" name="submit" value="Click!!!" [disabled]="formData.valid">
+    </form>
+  <a [routerLink]="['/dashboard']">Home</a>
+  {{ formData.valid | json }}
+</div>
